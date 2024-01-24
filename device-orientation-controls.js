@@ -1,7 +1,6 @@
 let debug = document.getElementById("debug");
 debug.innerHTML = "Device Orientation API is not supported by your browser.";
 
-
 let jumpvalue = 0;
 let jump = false;
 

@@ -20,7 +20,7 @@ let game_state = 'Start';
 img.style.display = 'none';
 message.classList.add('messageStyle');
 
-document.addEventListener('click', (e) => { 
+function startgame(){
     document.querySelectorAll('.pipe_sprite').forEach((e) => {
         e.remove();
     });
@@ -32,7 +32,7 @@ document.addEventListener('click', (e) => {
     score_val.innerHTML = '0';
     message.classList.remove('messageStyle');
     play();
-  });
+  };
 
 document.addEventListener('keydown', (e) => {
     
