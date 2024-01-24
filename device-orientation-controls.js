@@ -7,20 +7,19 @@ let jump = false;
 
 acl.addEventListener("reading", () => {
   let x = (Math.round(acl.x * 100) / 100).toFixed(2);
-  let y = (Math.round(acl.y * 100) / 100).toFixed(2);
-  let z = (Math.round(acl.z * 100) / 100).toFixed(2);
 
   if (!jump) {
-    if (acl.x > 0.4 || acl.x < -0.4) {
+    if (acl.x > 0.6 || acl.x < -0.6) {
       jumpvalue = 1;
       jump = true;
     }
   }
-  if (acl.x < 0.2 && acl.x > -0.2) {
+  if (acl.x < 0.3 && acl.x > -0.3) {
     jumpvalue = 0;
     jump = false;
   }
-  debug.innerHTML = jumpvalue;
+
+  debug.innerHTML = jumpvalue + "<br>"+x;
 });
 
 acl.start();
