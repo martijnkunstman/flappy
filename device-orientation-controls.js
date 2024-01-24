@@ -9,12 +9,12 @@ acl.addEventListener("reading", () => {
   let x = (Math.round(acl.x * 100) / 100).toFixed(2);
 
   if (!jump) {
-    if (x > 4 || x < -4) {
+    if (x > 2 || x < -2) {
       jumpvalue = 1;
       jump = true;
     }
   }
-  if (x < 2 && x > -2) {
+  if (x < 1 && x > -1) {
     jumpvalue = 0;
     jump = false;
   }
