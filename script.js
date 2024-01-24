@@ -4,6 +4,8 @@ let img = document.getElementById('bird-1');
 let sound_point = new Audio('sounds effect/point.mp3');
 let sound_die = new Audio('sounds effect/die.mp3');
 
+let bird_dy = 0;
+
 // getting bird element properties
 let bird_props = bird.getBoundingClientRect();
 
@@ -17,6 +19,20 @@ let score_title = document.querySelector('.score_title');
 let game_state = 'Start';
 img.style.display = 'none';
 message.classList.add('messageStyle');
+
+document.addEventListener('click', (e) => { 
+    document.querySelectorAll('.pipe_sprite').forEach((e) => {
+        e.remove();
+    });
+    img.style.display = 'block';
+    bird.style.top = '40vh';
+    game_state = 'Play';
+    message.innerHTML = '';
+    score_title.innerHTML = 'Score : ';
+    score_val.innerHTML = '0';
+    message.classList.remove('messageStyle');
+    play();
+  });
 
 document.addEventListener('keydown', (e) => {
     
@@ -67,10 +83,11 @@ function play(){
     }
     requestAnimationFrame(move);
 
-    let bird_dy = 0;
+    //let bird_dy = 0;
     function apply_gravity(){
         if(game_state != 'Play') return;
         bird_dy = bird_dy + grativy;
+
         document.addEventListener('keydown', (e) => {
             if(e.key == 'ArrowUp' || e.key == ' '){
                 img.src = 'images/Bird-2.png';

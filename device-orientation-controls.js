@@ -12,6 +12,7 @@ acl.addEventListener("reading", () => {
     if (x > 2 || x < -2) {
       jumpvalue = 1;
       jump = true;
+      bird_dy = -7.6;
     }
   }
   if (x < 1 && x > -1) {
