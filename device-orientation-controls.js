@@ -1,6 +1,11 @@
 let debug = document.getElementById("debug");
 debug.innerHTML = "Device Orientation API is not supported by your browser.";
 
+let orientbutton = document.getElementById("orientbutton");
+let startbutton = document.getElementById("startbutton");
+
+startbutton.style.display = "none";
+
 let jumpvalue = 0;
 let jump = false;
 
@@ -33,6 +38,8 @@ function requestOrientationPermission() {
               debug.innerHTML = jumpvalue + " - " + x;
             });
             acl.start();
+            startbutton.style.display = "block";
+            orientbutton.style.display = "none";
           });
         }
       })
@@ -59,6 +66,8 @@ function requestOrientationPermission() {
         debug.innerHTML = jumpvalue + " - " + x;
       });
       acl.start();
+      startbutton.style.display = "block";
+            orientbutton.style.display = "none";
     });
     
   }
