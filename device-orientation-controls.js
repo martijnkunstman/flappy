@@ -16,7 +16,7 @@ acl.addEventListener("reading", () => {
       jump = true;
     }
   }
-  if (acl.y < 0.2 && acl.y > -0.2) {
+  if (acl.x < 0.2 && acl.x > -0.2) {
     jumpvalue = 0;
     jump = false;
   }
