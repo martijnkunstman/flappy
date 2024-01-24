@@ -8,6 +8,7 @@ startbutton.style.display = "none";
 
 let jumpvalue = 0;
 let jump = false;
+let counterdebug = 0;
 
 function requestOrientationPermission() {
   console.log("requesting orientation permission");
@@ -19,7 +20,7 @@ function requestOrientationPermission() {
       .then((response) => {
         if (response == "granted") {
           window.addEventListener("deviceorientation", (e) => {
-            const acl = new Accelerometer({ frequency: 10 });
+            const acl = new Accelerometer({ frequency: 60 });
             acl.addEventListener("reading", () => {
               let x = (Math.round(acl.x * 100) / 100).toFixed(2);
 
@@ -46,8 +47,7 @@ function requestOrientationPermission() {
       .catch(console.error);
   } else {
     console.log("This is not an iOS device!");
-    window.addEventListener("deviceorientation", (e) => {
-      const acl = new Accelerometer({ frequency: 10 });
+       const acl = new Accelerometer({ frequency: 60 });
       acl.addEventListener("reading", () => {
         let x = (Math.round(acl.x * 100) / 100).toFixed(2);
 
@@ -68,7 +68,7 @@ function requestOrientationPermission() {
       acl.start();
       startbutton.style.display = "block";
       orientbutton.style.display = "none";
-    });
+  
     
   }
 }
