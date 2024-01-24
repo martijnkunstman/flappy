@@ -67,7 +67,7 @@ function requestOrientationPermission() {
       });
       acl.start();
       startbutton.style.display = "block";
-            orientbutton.style.display = "none";
+      orientbutton.style.display = "none";
     });
     
   }
