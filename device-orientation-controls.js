@@ -9,17 +9,17 @@ acl.addEventListener("reading", () => {
   let x = (Math.round(acl.x * 100) / 100).toFixed(2);
 
   if (!jump) {
-    if (acl.x > 0.6 || acl.x < -0.6) {
+    if (x > 0.6 || x < -0.6) {
       jumpvalue = 1;
       jump = true;
     }
   }
-  if (acl.x < 0.3 && acl.x > -0.3) {
+  if (x < 0.3 && x > -0.3) {
     jumpvalue = 0;
     jump = false;
   }
 
-  debug.innerHTML = jumpvalue + "<br>"+x;
+  debug.innerHTML = jumpvalue + " - "+x;
 });
 
 acl.start();
